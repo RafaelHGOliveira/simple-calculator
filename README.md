@@ -8,7 +8,7 @@ A simple and elegant calculator built with **React Native + Expo**.
 
 ## 💡 About
 
-The idea was simple: test whether it's possible to efficiently develop and build mobile apps using a Windows PC as the main workstation, remotely connecting to a MacBook via SSH for iOS builds and simulator deployment.
+The idea was simple: test whether it's possible to efficiently develop and build mobile apps remotely — coding on a MacBook via SSH from a Windows PC, with an AI assistant (Claude) doing the heavy lifting.
 
 **Spoiler:** it works really well.
 
@@ -17,20 +17,28 @@ The idea was simple: test whether it's possible to efficiently develop and build
 ## 🖥️ Remote Setup
 
 ```
-┌─────────────┐         SSH         ┌─────────────┐
-│  Windows PC │ ◄──────────────────► │   MacBook    │
-│   (code)    │                      │  (iOS build) │
-└─────────────┘                      └──────┬──────┘
-                                            │
-                                     ┌──────▼──────┐
-                                     │   iPhone     │
-                                     │  Simulator   │
-                                     └─────────────┘
+                              ┌─────────────┐
+                         ┌───►│   iPhone     │
+                         │    │  (Expo Go)   │
+┌─────────────┐  SSH  ┌──┴──────────┐       └─────────────┘
+│  Windows PC │◄─────►│   MacBook    │
+│  (terminal) │       │  (dev server)│       ┌─────────────┐
+└──────┬──────┘       └──────────────┘  ┌───►│  iOS         │
+       │                                │    │  Simulator   │
+       │         Tailscale VPN          │    └─────────────┘
+       └────────────────────────────────┘
+       │
+       │  ┌─────────────┐
+       └─►│  Browser     │
+          │  (Web mode)  │
+          └─────────────┘
 ```
 
-- **Windows** — where the code is written and edited
-- **MacBook** — responsible for compiling and running the app via Expo/Xcode
+- **Windows** — the main workstation, used to connect remotely
+- **MacBook** — where the code lives, builds, and runs via Expo/Xcode
 - **SSH** — bridges the two machines together
+- **Tailscale** — VPN that connects both machines on the same network, allowing the Windows PC to preview the app in the browser (web mode) and the iPhone to load it via Expo Go
+- **Claude** — the one who actually wrote the code 🤖
 
 ---
 
@@ -69,4 +77,4 @@ npx expo start
 
 ---
 
-*Made with ☕ and SSH.*
+*Made with ☕, SSH, and AI.*
