@@ -1,40 +1,40 @@
-# 🧮 Calculadora
+# 🧮 Calculator
 
-Uma calculadora simples e elegante feita com **React Native + Expo**.
+A simple and elegant calculator built with **React Native + Expo**.
 
-> Este projeto **não tem fins comerciais**. É apenas um app de teste criado para validar um setup de **programação remota** entre um **MacBook** e um **PC Windows** via **SSH**.
-
----
-
-## 💡 Sobre
-
-A ideia era simples: testar se é possível desenvolver e compilar apps mobile de forma eficiente usando um PC Windows como estação de trabalho principal, conectando remotamente a um MacBook via SSH para builds e deploy no simulador iOS.
-
-**Spoiler:** funciona muito bem.
+> This project has **no commercial purpose**. It's just a test app created to validate a **remote programming setup** between a **MacBook** and a **Windows PC** via **SSH**.
 
 ---
 
-## 🖥️ Setup Remoto
+## 💡 About
+
+The idea was simple: test whether it's possible to efficiently develop and build mobile apps using a Windows PC as the main workstation, remotely connecting to a MacBook via SSH for iOS builds and simulator deployment.
+
+**Spoiler:** it works really well.
+
+---
+
+## 🖥️ Remote Setup
 
 ```
 ┌─────────────┐         SSH         ┌─────────────┐
 │  Windows PC │ ◄──────────────────► │   MacBook    │
-│  (código)   │                      │  (build iOS) │
+│   (code)    │                      │  (iOS build) │
 └─────────────┘                      └──────┬──────┘
                                             │
                                      ┌──────▼──────┐
-                                     │  Simulador   │
-                                     │    iPhone    │
+                                     │   iPhone     │
+                                     │  Simulator   │
                                      └─────────────┘
 ```
 
-- **Windows** — onde o código é escrito e editado
-- **MacBook** — responsável por compilar e rodar o app via Expo/Xcode
-- **SSH** — faz a ponte entre as duas máquinas
+- **Windows** — where the code is written and edited
+- **MacBook** — responsible for compiling and running the app via Expo/Xcode
+- **SSH** — bridges the two machines together
 
 ---
 
-## 🚀 Como rodar
+## 🚀 Getting Started
 
 ```bash
 cd calculadora
@@ -42,8 +42,8 @@ npm install
 npx expo start
 ```
 
-| Plataforma | Comando |
-|------------|---------|
+| Platform | Command |
+|----------|---------|
 | iOS Simulator | `npx expo run:ios` |
 | Expo Go | `npx expo start --go` |
 | Web (browser) | `npx expo start --web` |
@@ -60,13 +60,13 @@ npx expo start
 
 ## 📱 Features
 
-- Operações básicas (+, −, ×, ÷)
-- Porcentagem
-- Inversão de sinal (+/−)
+- Basic operations (+, −, ×, ÷)
+- Percentage
+- Sign toggle (+/−)
 - Backspace
-- Layout responsivo (iOS e Web)
-- Tema escuro
+- Responsive layout (iOS and Web)
+- Dark theme
 
 ---
 
-*Feito com ☕ e SSH.*
+*Made with ☕ and SSH.*
