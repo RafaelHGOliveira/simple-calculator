@@ -17,27 +17,28 @@ The idea was simple: test whether it's possible to efficiently develop and build
 ## 🖥️ Remote Setup
 
 ```
-                              ┌─────────────┐
-                         ┌───►│   iPhone     │
-                         │    │  (Expo Go)   │
-┌─────────────┐  SSH  ┌──┴──────────┐       └─────────────┘
-│  Windows PC │◄─────►│   MacBook    │
-│  (terminal) │       │  (dev server)│       ┌─────────────┐
-└──────┬──────┘       └──────────────┘  ┌───►│  iOS         │
-       │                                │    │  Simulator   │
-       │         Tailscale VPN          │    └─────────────┘
-       └────────────────────────────────┘
-       │
-       │  ┌─────────────┐
-       └─►│  Browser     │
-          │  (Web mode)  │
+              ┌──────────── Tailscale VPN ────────────┐
+              │                                       │
+┌─────────────┤         SSH          ┌────────────────┤
+│  Windows PC │◄────────────────────►│    MacBook      │
+│  (terminal) │                      │  (dev server)   │
+└──────┬──────┘                      └───────┬────────┘
+       │                                     │
+       │  ┌─────────────┐            ┌───────▼────────┐
+       └─►│  Browser     │           │  iOS Simulator  │
+          │  (Web mode)  │           └────────────────┘
           └─────────────┘
+                              ┌─────────────┐
+                              │   iPhone     │
+                              │  (Expo Go)   │
+                              └─────────────┘
+                              (local Wi-Fi / independent)
 ```
 
 - **Windows** — the main workstation, used to connect remotely
 - **MacBook** — where the code lives, builds, and runs via Expo/Xcode
-- **SSH** — bridges the two machines together
-- **Tailscale** — VPN that connects both machines on the same network, allowing the Windows PC to preview the app in the browser (web mode) and the iPhone to load it via Expo Go
+- **Tailscale** — VPN that makes everything possible: SSH connection, browser preview (web mode), and simulator access — all through the same network
+- **iPhone / Expo Go** — the only part that doesn't go through Tailscale, connects directly to the dev server
 - **Claude** — the one who actually wrote the code 🤖
 
 ---
