@@ -45,8 +45,8 @@ The idea was simple: test whether it's possible to efficiently develop and build
 ## 🚀 Getting Started
 
 ```bash
-git clone https://github.com/RafaelHGOliveira/simple-calculator.git
-cd simple-calculator
+git clone https://github.com/RafaelHGOliveira/simple-app-calculator.git
+cd simple-app-calculator
 npm install
 npx expo start
 ```
