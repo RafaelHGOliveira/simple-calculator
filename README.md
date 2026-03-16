@@ -8,7 +8,7 @@ A simple and elegant calculator built with **React Native + Expo**.
 
 ## 💡 About
 
-The idea was simple: test whether it's possible to efficiently develop and build mobile apps remotely — coding on a MacBook via SSH from a Windows PC, with an AI assistant (Claude) doing the heavy lifting.
+The idea was simple: test whether it's possible to efficiently develop and build mobile apps remotely — coding on a MacBook via SSH from a Windows PC.
 
 **Spoiler:** it works really well.
 
@@ -39,7 +39,6 @@ The idea was simple: test whether it's possible to efficiently develop and build
 - **MacBook** — where the code lives, builds, and runs via Expo/Xcode
 - **Tailscale** — VPN that makes everything possible: SSH connection, browser preview (web mode), and simulator access — all through the same network
 - **iPhone / Expo Go** — the only part that doesn't go through Tailscale, connects directly to the dev server
-- **Claude** — the one who actually wrote the code 🤖
 
 ---
 
@@ -79,4 +78,4 @@ npx expo start
 
 ---
 
-*Made with ☕, SSH, and AI.*
+*Made with ☕ and SSH.*
